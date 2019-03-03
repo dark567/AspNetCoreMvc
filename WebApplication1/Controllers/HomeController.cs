@@ -12,7 +12,8 @@ namespace WebApplication1.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            HelloModel _model = new HelloModel() { HelloMessage = "Hi, Serge" };
+            return View(_model);
         }
 
         public IActionResult Privacy()
