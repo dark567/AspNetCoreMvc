@@ -1,0 +1,11 @@
+D:\project\c#\asp net core\test\WebApplication1\DataLayer\bin\Debug\netcoreapp2.2\DataLayer.deps.json
+D:\project\c#\asp net core\test\WebApplication1\DataLayer\bin\Debug\netcoreapp2.2\DataLayer.dll
+D:\project\c#\asp net core\test\WebApplication1\DataLayer\obj\Debug\netcoreapp2.2\DataLayer.csprojAssemblyReference.cache
+D:\project\c#\asp net core\test\WebApplication1\DataLayer\obj\Debug\netcoreapp2.2\DataLayer.csproj.CoreCompileInputs.cache
+D:\project\c#\asp net core\test\WebApplication1\DataLayer\obj\Debug\netcoreapp2.2\DataLayer.AssemblyInfoInputs.cache
+D:\project\c#\asp net core\test\WebApplication1\DataLayer\obj\Debug\netcoreapp2.2\DataLayer.AssemblyInfo.cs
+D:\project\c#\asp net core\test\WebApplication1\DataLayer\bin\Debug\netcoreapp2.2\DataLayer.runtimeconfig.json
+D:\project\c#\asp net core\test\WebApplication1\DataLayer\bin\Debug\netcoreapp2.2\DataLayer.runtimeconfig.dev.json
+D:\project\c#\asp net core\test\WebApplication1\DataLayer\bin\Debug\netcoreapp2.2\DataLayer.pdb
+D:\project\c#\asp net core\test\WebApplication1\DataLayer\obj\Debug\netcoreapp2.2\DataLayer.dll
+D:\project\c#\asp net core\test\WebApplication1\DataLayer\obj\Debug\netcoreapp2.2\DataLayer.pdb
