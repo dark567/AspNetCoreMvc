@@ -20,14 +20,14 @@ namespace DataLayer
         public EFDBContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<EFDBContext>();
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=D:\project\c#\asp net core\test\WebApplication1\DB\AspNetCoreMVC;Trusted_Connection=True;MultipleActiveResultSets=True", b => b.MigrationsAssembly("DataLayer"));
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=AspNetCoreMVC;Trusted_Connection=True;MultipleActiveResultSets=True", b => b.MigrationsAssembly("DataLayer"));
             return new EFDBContext(optionsBuilder.Options);
         }
     }
 
-    public static class SampleClass
-    {
-        public static void Initialize()
-        { }
-    }
+    //public static class SampleClass
+    //{
+    //    public static void Initialize()
+    //    { }
+    //}
 }
