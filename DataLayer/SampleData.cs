@@ -18,7 +18,7 @@ namespace DataLayer
                 context.SaveChanges();
 
                 context.Material.Add(new Entityes.Material() { Title = "First Material", Html = "<i>Material content</i>", DirectoryID = context.Directory.First().Id });
-                context.Material.Add(new Entityes.Material() { Title = "Second Material", Html = "<i>Material content</i>", DirectoryID = context.Directory.First().Id });
+                context.Material.Add(new Entityes.Material() { Title = "Second Material", Html = "<i>Material content</i>", DirectoryID = context.Directory.First().Id+1 });
                 context.Material.Add(new Entityes.Material() { Title = "Third Material", Html = "<i>Material content</i>", DirectoryID = context.Directory.Last().Id });
                 context.SaveChanges();
 
