@@ -1,4 +1,6 @@
-﻿using DataLayer;
+﻿using BuissnesLayer;
+using BuissnesLayer.Interfaces;
+using DataLayer;
 using DataLayer.Entityes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,16 +14,29 @@ namespace WebApplication1.Controllers
     public class HomeController : Controller
     {
         private EFDBContext _context;
-        public HomeController(EFDBContext context)
+        private IDirectorysRepository _dirRep;
+
+        private DataManager _dataManager;
+
+        public HomeController(/*EFDBContext context, IDirectorysRepository dirRep,*/ DataManager dataManager)
         {
-            _context = context;
+            //_context = context;
+            //dirRep = _dirRep;
+
+            _dataManager = dataManager;
         }
 
         public IActionResult Index()
         {
             //HelloModel _model = new HelloModel() { HelloMessage = "Hi, Serge" };
             //return View(_model);
-            List<Directory> _dirs = _context.Directory.Include(x=>x.Materials).ToList();
+
+            //List<Directory> _dirs = _context.Directory.Include(x=>x.Materials).ToList();
+
+            //List<Directory> _dirs =_dirRep.GetAllDirectorys().ToList();
+
+            List<Directory> _dirs = _dataManager.Directorys.GetAllDirectorys(true).ToList();
+
             return View(_dirs);
         }
 

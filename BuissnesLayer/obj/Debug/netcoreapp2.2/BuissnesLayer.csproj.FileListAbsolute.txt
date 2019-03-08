@@ -1,0 +1,12 @@
+D:\project\c#\asp net core\test\WebApplication1\BuissnesLayer\bin\Debug\netcoreapp2.2\BuissnesLayer.deps.json
+D:\project\c#\asp net core\test\WebApplication1\BuissnesLayer\bin\Debug\netcoreapp2.2\BuissnesLayer.dll
+D:\project\c#\asp net core\test\WebApplication1\BuissnesLayer\bin\Debug\netcoreapp2.2\BuissnesLayer.pdb
+D:\project\c#\asp net core\test\WebApplication1\BuissnesLayer\bin\Debug\netcoreapp2.2\DataLayer.dll
+D:\project\c#\asp net core\test\WebApplication1\BuissnesLayer\bin\Debug\netcoreapp2.2\DataLayer.pdb
+D:\project\c#\asp net core\test\WebApplication1\BuissnesLayer\obj\Debug\netcoreapp2.2\BuissnesLayer.csprojAssemblyReference.cache
+D:\project\c#\asp net core\test\WebApplication1\BuissnesLayer\obj\Debug\netcoreapp2.2\BuissnesLayer.csproj.CoreCompileInputs.cache
+D:\project\c#\asp net core\test\WebApplication1\BuissnesLayer\obj\Debug\netcoreapp2.2\BuissnesLayer.AssemblyInfoInputs.cache
+D:\project\c#\asp net core\test\WebApplication1\BuissnesLayer\obj\Debug\netcoreapp2.2\BuissnesLayer.AssemblyInfo.cs
+D:\project\c#\asp net core\test\WebApplication1\BuissnesLayer\obj\Debug\netcoreapp2.2\BuissnesLayer.csproj.CopyComplete
+D:\project\c#\asp net core\test\WebApplication1\BuissnesLayer\obj\Debug\netcoreapp2.2\BuissnesLayer.dll
+D:\project\c#\asp net core\test\WebApplication1\BuissnesLayer\obj\Debug\netcoreapp2.2\BuissnesLayer.pdb

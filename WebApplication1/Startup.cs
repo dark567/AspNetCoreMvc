@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BuissnesLayer;
+using BuissnesLayer.Implemetations;
+using BuissnesLayer.Interfaces;
 using DataLayer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,7 +31,7 @@ namespace WebApplication1
         {
 
             var connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<EFDBContext>(options => options.UseSqlServer(connection, b=>b.MigrationsAssembly("DataLayer")));
+            services.AddDbContext<EFDBContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("DataLayer")));
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -36,6 +39,11 @@ namespace WebApplication1
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+
+            services.AddTransient<IDirectorysRepository, EFDirectorysRepository>();
+            services.AddTransient<IMaterialsRepository, EFMaterialsRepository>();
+
+            services.AddScoped<DataManager>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
