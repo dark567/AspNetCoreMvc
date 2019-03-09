@@ -12,11 +12,19 @@ namespace PresentationLayer.Services
         private DataManager _dataManager;
         private MaterialService _materialService;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dataManager"></param>
         public DirectoryService(DataManager dataManager)
         {
             this.dataManager = dataManager;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<DirectoryViewModel> GetDirectoryList()
         {
             var _dirs = dataManager.Directorys.GetAllDirectorys();
