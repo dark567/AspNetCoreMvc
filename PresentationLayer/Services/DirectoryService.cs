@@ -9,7 +9,7 @@ namespace PresentationLayer.Services
 {
     public class DirectoryService
     {
-        private DataManager _dataManager;
+        private DataManager dataManager;
         private MaterialService _materialService;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace PresentationLayer.Services
         {
             if (directoryId != 0)
             {
-                var _dirDb = _dataManager.Directorys.GetDirectoryById(directoryId);
+                var _dirDb = dataManager.Directorys.GetDirectoryById(directoryId);
                 var _dirEditModel = new DirectoryEditModel(){
                     Id = _dirDb.Id,
                     Title = _dirDb.Title,
