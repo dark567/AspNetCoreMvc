@@ -11,8 +11,8 @@ namespace BuissnesLayer.Interfaces
 
         Material GetMaterialById(int materialId, bool includeDirectory = false);
 
-        void SaveDirectory(Material material);
+        void SaveMaterial(Material material);
 
-        void DeleteDirectory(Material material);
+        void DeleteMaterial(Material material);
     }
 }

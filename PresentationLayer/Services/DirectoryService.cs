@@ -40,7 +40,7 @@ namespace PresentationLayer.Services
         {
             var _directory = dataManager.Directorys.GetDirectoryById(directoryId, true);
 
-            List<MateriaViewlModel> _materialsViewModel = new List<MateriaViewlModel>();
+            List<MaterialViewlModel> _materialsViewModel = new List<MaterialViewlModel>();
             foreach (var item in _directory.Materials)
             {
                 _materialsViewModel.Add(_materialService.MaterialDBModelToView(item.Id));

@@ -1,4 +1,5 @@
 ﻿using BuissnesLayer;
+using DataLayer.Entityes;
 using PresentationLayer.Models;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,9 @@ namespace PresentationLayer.Services
             this.dataManager = dataManager;
         }
 
-        public MateriaViewlModel MaterialDBModelToView(int materialId)
+        public MaterialViewlModel MaterialDBModelToView(int materialId)
         {
-            var _model = new MateriaViewlModel()
+            var _model = new MaterialViewlModel()
             {
                 Material = dataManager.Materials.GetMaterialById(materialId, true),
             };
@@ -31,6 +32,39 @@ namespace PresentationLayer.Services
             }
 
             return _model;
+        }
+
+        public MaterialEditlModel GetMaterialEditModel(int materialId)
+        {
+            var _dbModel = dataManager.Materials.GetMaterialById(materialId);
+            var _editModel = new MaterialEditlModel()
+            {
+                Id=_dbModel.Id,
+                DirectoryId = _dbModel.DirectoryID,
+                Title = _dbModel.Title,
+                Html = _dbModel.Html
+
+            };
+            return _editModel;
+        }
+
+        public MaterialViewlModel SaveMaterialEditModelToDb(MaterialEditlModel editModel)
+        {
+            Material material;
+            if (editModel.Id != 0)
+            {
+                material = dataManager.Materials.GetMaterialById(editModel.Id);
+            }
+            else
+            {
+                material = new Material();
+            }
+            material.Title = editModel.Title;
+            material.Html = editModel.Html;
+            material.DirectoryID = editModel.DirectoryId;
+            dataManager.Materials.SaveMaterial(material);
+            return MaterialDBModelToView(material.Id);
+            
         }
 
 

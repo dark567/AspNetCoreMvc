@@ -8,7 +8,7 @@ namespace PresentationLayer.Models
     public class DirectoryViewModel: PageViewModel
     {
         public Directory Directory { get; set; }
-        public List<MateriaViewlModel> Materias { get; set; }
+        public List<MaterialViewlModel> Materias { get; set; }
 
     }
 

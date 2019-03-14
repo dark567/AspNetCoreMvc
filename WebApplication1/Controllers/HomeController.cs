@@ -4,6 +4,7 @@ using DataLayer;
 using DataLayer.Entityes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PresentationLayer;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -13,10 +14,11 @@ namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
-        private EFDBContext _context;
-        private IDirectorysRepository _dirRep;
+        //private EFDBContext _context;
+        //private IDirectorysRepository _dirRep;
 
         private DataManager _dataManager;
+        private ServicesManager _servicesmanger;
 
         public HomeController(/*EFDBContext context, IDirectorysRepository dirRep,*/ DataManager dataManager)
         {
@@ -24,6 +26,7 @@ namespace WebApplication1.Controllers
             //dirRep = _dirRep;
 
             _dataManager = dataManager;
+            _servicesmanger = new ServicesManager(_dataManager);
         }
 
         public IActionResult Index()
