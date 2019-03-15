@@ -5,6 +5,7 @@ using DataLayer.Entityes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PresentationLayer;
+using PresentationLayer.Models;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -38,8 +39,9 @@ namespace WebApplication1.Controllers
 
             //List<Directory> _dirs =_dirRep.GetAllDirectorys().ToList();
 
-            List<Directory> _dirs = _dataManager.Directorys.GetAllDirectorys(true).ToList();
+            //List<Directory> _dirs = _dataManager.Directorys.GetAllDirectorys(true).ToList();
 
+            List<DirectoryViewModel> _dirs = _servicesmanger.Directorys.GetDirectoryList();
             return View(_dirs);
         }
 

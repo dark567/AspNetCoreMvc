@@ -19,6 +19,7 @@ namespace PresentationLayer.Services
         public DirectoryService(DataManager dataManager)
         {
             this.dataManager = dataManager;
+            _materialService = new MaterialService(dataManager);
         }
 
         /// <summary>
@@ -40,13 +41,13 @@ namespace PresentationLayer.Services
         {
             var _directory = dataManager.Directorys.GetDirectoryById(directoryId, true);
 
-            List<MaterialViewlModel> _materialsViewModel = new List<MaterialViewlModel>();
+            List<MaterialViewlModel> _materialsViewModelList = new List<MaterialViewlModel>();
             foreach (var item in _directory.Materials)
             {
-                _materialsViewModel.Add(_materialService.MaterialDBModelToView(item.Id));
+                _materialsViewModelList.Add(_materialService.MaterialDBModelToView(item.Id));
             }
 
-            return new DirectoryViewModel() { Directory = _directory, Materias = _materialsViewModel };
+            return new DirectoryViewModel() { Directory = _directory, Materias = _materialsViewModelList };
         }
 
         public DirectoryEditModel GetDirectoryEditModel(int directoryId = 0)

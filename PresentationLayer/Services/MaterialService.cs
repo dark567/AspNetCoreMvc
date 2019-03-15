@@ -1,10 +1,7 @@
 ﻿using BuissnesLayer;
 using DataLayer.Entityes;
 using PresentationLayer.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace PresentationLayer.Services
 {
@@ -21,16 +18,15 @@ namespace PresentationLayer.Services
         {
             var _model = new MaterialViewlModel()
             {
-                Material = dataManager.Materials.GetMaterialById(materialId, true),
+                Material = dataManager.Materials.GetMaterialById(materialId),
             };
 
-            var _dir = dataManager.Directorys.GetDirectoryById(_model.Material.DirectoryID);
+            var _dir = dataManager.Directorys.GetDirectoryById(_model.Material.DirectoryID, true);
 
-            if (_dir.Materials.IndexOf(_model.Material) != _dir.Materials.Count())
+            if (_dir.Materials.IndexOf(_dir.Materials.FirstOrDefault(x => x.Id == _model.Material.Id)) != _dir.Materials.Count() - 1)
             {
-                _model.NextMaterial = _dir.Materials.ElementAt(_dir.Materials.IndexOf(_model.Material) + 1);
+                _model.NextMaterial = _dir.Materials.ElementAt(_dir.Materials.IndexOf(_dir.Materials.FirstOrDefault(x => x.Id == _model.Material.Id)) + 1);
             }
-
             return _model;
         }
 
