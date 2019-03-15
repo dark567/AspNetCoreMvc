@@ -23,6 +23,8 @@ namespace WebApplication1
                 var services = scope.ServiceProvider;
 
                 var context = services.GetRequiredService<EFDBContext>();
+
+                // заполнение данными
                 SampleData.InitData(context);
             }
 

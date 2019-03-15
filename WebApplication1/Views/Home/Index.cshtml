@@ -17,12 +17,11 @@
                 <li>
                     <h2><a asp-action="Index" asp-controller ="Page" asp-route-pageId="@item.Directory.Id" asp-route-pageType ="@PageEnums.PageType.Directory"> @item.Directory.Title </a></h2>
                     <ul>
-                        @if (item.Materias != null)
+                        @if (item.Materials != null)
                         {
 
-                            foreach (var SubItem in item.Materias)
+                            foreach (var SubItem in item.Materials)
                             {
-                                @*<li><a asp-action="Index" asp-controller="Page" asp-route="@SubItem.Material.Id" asp-route-pageType="@PageEnums.PageType.Material">@SubItem.Material.Title</a></li>*@
                                 <li><a asp-action="Index" asp-controller="Page" asp-route-pageId="@SubItem.Material.Id" asp-route-pageType="@PageEnums.PageType.Material">@SubItem.Material.Title</a></li>
                             }
                         }

@@ -47,7 +47,7 @@ namespace PresentationLayer.Services
                 _materialsViewModelList.Add(_materialService.MaterialDBModelToView(item.Id));
             }
 
-            return new DirectoryViewModel() { Directory = _directory, Materias = _materialsViewModelList };
+            return new DirectoryViewModel() { Directory = _directory, Materials = _materialsViewModelList };
         }
 
         public DirectoryEditModel GetDirectoryEditModel(int directoryId = 0)

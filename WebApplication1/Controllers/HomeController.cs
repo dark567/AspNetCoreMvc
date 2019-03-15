@@ -15,7 +15,7 @@ namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
-        //private EFDBContext _context;
+        private EFDBContext _context;
         //private IDirectorysRepository _dirRep;
 
         private DataManager _dataManager;
@@ -35,7 +35,7 @@ namespace WebApplication1.Controllers
             //HelloModel _model = new HelloModel() { HelloMessage = "Hi, Serge" };
             //return View(_model);
 
-            //List<Directory> _dirs = _context.Directory.Include(x=>x.Materials).ToList();
+            List<Directory> _dirs = _context.Directory.Include(x=>x.Materials).ToList();
 
             //List<Directory> _dirs =_dirRep.GetAllDirectorys().ToList();
 
