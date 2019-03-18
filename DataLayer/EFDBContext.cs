@@ -15,12 +15,16 @@ namespace DataLayer
         public EFDBContext(DbContextOptions<EFDBContext> options) : base(options) { }
 
     }
+
+    /// <summary>
+    /// for migration
+    /// </summary>
     public class EFDBContextFactory : IDesignTimeDbContextFactory<EFDBContext>
     {
         public EFDBContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<EFDBContext>();
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=AspNetCoreMVC;Trusted_Connection=True;MultipleActiveResultSets=True", b => b.MigrationsAssembly("DataLayer"));
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=AspNetCoreMVC00;Trusted_Connection=True;MultipleActiveResultSets=True", b => b.MigrationsAssembly("DataLayer"));
             return new EFDBContext(optionsBuilder.Options);
         }
     }

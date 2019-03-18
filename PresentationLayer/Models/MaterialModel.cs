@@ -6,12 +6,12 @@ using System.Text;
 
 namespace PresentationLayer.Models
 {
-    public class MaterialViewlModel : PageViewModel
+    public class MaterialViewModel : PageViewModel
     {
         public Material Material { get; set; }
         public Material NextMaterial { get; set; }
     }
-    public class MaterialEditlModel : PageEditModel
+    public class MaterialEditModel : PageEditModel
     {
         [Required]
         public int DirectoryId { get; set; }

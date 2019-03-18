@@ -1,26 +1,27 @@
 ﻿using BuissnesLayer;
 using DataLayer.Entityes;
 using PresentationLayer.Models;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace PresentationLayer.Services
 {
     public class MaterialService
     {
         private DataManager dataManager;
-
         public MaterialService(DataManager dataManager)
         {
             this.dataManager = dataManager;
         }
 
-        public MaterialViewlModel MaterialDBModelToView(int materialId)
+        public MaterialViewModel MaterialDBModelToView(int materialId)
         {
-            var _model = new MaterialViewlModel()
+            var _model = new MaterialViewModel()
             {
                 Material = dataManager.Materials.GetMaterialById(materialId),
             };
-
             var _dir = dataManager.Directorys.GetDirectoryById(_model.Material.DirectoryID, true);
 
             if (_dir.Materials.IndexOf(_dir.Materials.FirstOrDefault(x => x.Id == _model.Material.Id)) != _dir.Materials.Count() - 1)
@@ -30,21 +31,20 @@ namespace PresentationLayer.Services
             return _model;
         }
 
-        public MaterialEditlModel GetMaterialEditModel(int materialId)
+        public MaterialEditModel GetMaterialEditModel(int materialId)
         {
             var _dbModel = dataManager.Materials.GetMaterialById(materialId);
-            var _editModel = new MaterialEditlModel()
+            var _editModel = new MaterialEditModel()
             {
-                Id=_dbModel.Id,
+                Id = _dbModel.Id = _dbModel.Id,
                 DirectoryId = _dbModel.DirectoryID,
                 Title = _dbModel.Title,
                 Html = _dbModel.Html
-
             };
             return _editModel;
         }
 
-        public MaterialViewlModel SaveMaterialEditModelToDb(MaterialEditlModel editModel)
+        public MaterialViewModel SaveMaterialEditModelToDb(MaterialEditModel editModel)
         {
             Material material;
             if (editModel.Id != 0)
@@ -60,10 +60,11 @@ namespace PresentationLayer.Services
             material.DirectoryID = editModel.DirectoryId;
             dataManager.Materials.SaveMaterial(material);
             return MaterialDBModelToView(material.Id);
-            
         }
-
-
+        public MaterialEditModel CreateNewMaterialEditModel(int directoryId)
+        {
+            return new MaterialEditModel() { DirectoryId = directoryId };
+        }
 
     }
 }
